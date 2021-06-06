@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  primary:
+    build:
+      context: .
+      dockerfile: replica.dockerfile
+    privileged: true
+    ports: 
+      - 9870:9870   # default port of HDFS
+      - 18088:18088 # default port of YARN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - .:/src
+    env_file: 
+      - docker.env
+
+  replica:
+    build:
+      context: .
+      dockerfile: replica.dockerfile
+    privileged: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - .:/src
+    env_file: 
+      - docker.env

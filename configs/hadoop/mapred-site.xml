@@ -1,0 +1,34 @@
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>primary:9001</value>
+  </property>
+  <property>
+    <name>mapreduce.jobtracker.http.address</name>
+    <value>primary:50030</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhisotry.address</name>
+    <value>primary:10020</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>primary:19888</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.done-dir</name>
+    <value>/jobhistory/done</value>
+  </property>
+  <property>
+    <name>mapreduce.intermediate-done-dir</name>
+    <value>/jobhisotry/done_intermediate</value>
+  </property>
+  <property>
+    <name>mapreduce.job.ubertask.enable</name>
+    <value>true</value>
+  </property>
+</configuration>
